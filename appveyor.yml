@@ -35,6 +35,7 @@ before_build:
     
     cmake --version
     cmake .. -G %generator%
+    dir
     
 build:
   project: c:\projects\fasttext\build\template.sln
