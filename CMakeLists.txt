@@ -16,6 +16,7 @@ set (fasttext_VERSION_MINOR 1)
 
 include_directories(fasttext)
 
+set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_FLAGS " -pthread -std=c++11 -funroll-loops -O3 -march=native")
 
 set(HEADER_FILES
