@@ -40,5 +40,5 @@ before_build:
     dir
     
 build:
-  project: c:\projects\fasttext\build\template.sln
+  project: c:\projects\fasttext\build\fasttext.sln
   parallel: true 
