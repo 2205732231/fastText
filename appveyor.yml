@@ -45,3 +45,17 @@ artifacts:
   - path: build/%CONFIGURATION%
     name: fastText-win64-%CONFIGURATION%
     type: zip
+
+deploy:
+  release: fastText-$(APPVEYOR_REPO_TAG_NAME)-build$(appveyor_build_version)
+  description: 'The latest binary build of fastText for 64 bit Windows, using VS2017'
+  provider: GitHub
+  auth_token:
+    secure: w6RhxxgTQp67I0w3mL1oSQXUZpmhnedD8uWFMyHaubLK0t0+cKWt5uLPCoHq2XbL
+  artifact: fastText-win64-%CONFIGURATION%
+  draft: false
+  prerelease: false
+  on:
+    branch: master
+    configuration: Release
+    appveyor_repo_tag: true
