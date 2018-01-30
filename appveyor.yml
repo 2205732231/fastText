@@ -42,6 +42,6 @@ build:
   parallel: true 
 
 artifacts:
-  - path: build/Release
-    name: fastText-win64-release
+  - path: build/%CONFIGURATION%
+    name: fastText-win64-%CONFIGURATION%
     type: zip
