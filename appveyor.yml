@@ -40,3 +40,8 @@ before_build:
 build:
   project: c:\projects\fasttext\build\fasttext.sln
   parallel: true 
+
+artifacts:
+  - path: build/Release
+    name: fastText-win64-release
+    type: zip
