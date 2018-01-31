@@ -1,4 +1,14 @@
-## Table of contents
+## fastText for Windows
+
+Unofficial FastText binary builds for Windows.
+
+This repository hosts unofficial Windows binary builds of fastText, a library for efficient learning of word representations and sentence classification. Historically, fastText did not build nor run on Windows. Earlier verisons of fastText for Windows was made with manually crafted Visual Studio solution file. Most recently this has been replaced by cmake generated solution files. The binaries are built by continuous integration and are synchronized with upstream master branch.
+
+[![AppVeyor](https://img.shields.io/appveyor/ci/xiamx/fasttext.svg)](https://ci.appveyor.com/project/xiamx/fasttext)
+[![Github All Releases](https://img.shields.io/github/downloads/xiamx/fasttext/total.svg)](https://github.com/xiamx/fastText/releases)
+[![GitHub release](https://img.shields.io/github/release/xiamx/fasttext.svg)](https://github.com/xiamx/fastText/releases/tag/latest)
+
+## fastText table of contents
 
 * [Introduction](#introduction)
 * [Resources](#resources)
