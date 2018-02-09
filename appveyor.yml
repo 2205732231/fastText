@@ -49,10 +49,10 @@ deploy:
   provider: GitHub
   auth_token:
     secure: w6RhxxgTQp67I0w3mL1oSQXUZpmhnedD8uWFMyHaubLK0t0+cKWt5uLPCoHq2XbL
-  artifact: fastText-win64-%CONFIGURATION%
+  artifact: build/%CONFIGURATION%
   draft: false
   prerelease: false
+  force_update: true
   on:
-    branch: master
     configuration: Release
     appveyor_repo_tag: true
