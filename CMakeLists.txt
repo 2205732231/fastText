@@ -17,7 +17,7 @@ set (fasttext_VERSION_MINOR 1)
 include_directories(fasttext)
 
 if(WIN32)
-  set(CMAKE_CXX_FLAGS " -std=c++11 -funroll-loops -O3 -march=native")
+  set(CMAKE_CXX_FLAGS "/O2")
 else()
   set(CMAKE_CXX_FLAGS " -pthread -std=c++11 -funroll-loops -O3 -march=native")
 endif()

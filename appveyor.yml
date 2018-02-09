@@ -31,28 +31,27 @@ before_build:
     cmake --version
 
     cmake .. -G %generator%
-
-    dir
     
 build:
   project: c:\projects\fasttext\build\fasttext.sln
   parallel: true 
 
+after_build:
+  7z a %APPVEYOR_BUILD_FOLDER%\build\fasttext-win64-latest-%CONFIGURATION%.zip %APPVEYOR_BUILD_FOLDER%\build\%CONFIGURATION%
+
 artifacts:
-  - path: build/%CONFIGURATION%
+  - path: build\fasttext-win64-latest-$(CONFIGURATION).zip
     name: fastText-win64-%CONFIGURATION%
-    type: zip
 
 deploy:
-  release: fastText-%APPVEYOR_REPO_TAG_NAME%-build$(appveyor_build_version)
-  description: 'The latest binary build of fastText for 64 bit Windows, using VS2017'
+  release: fastText-latest-build$(appveyor_build_version)
+  description: 'The latest binary build $(appveyor_build_version) of fastText for 64 bit Windows, using VS2017'
   provider: GitHub
   auth_token:
     secure: w6RhxxgTQp67I0w3mL1oSQXUZpmhnedD8uWFMyHaubLK0t0+cKWt5uLPCoHq2XbL
-  artifact: fastText-win64-%CONFIGURATION%
-  draft: false
+  artifact: build\fasttext-win64-latest-$(CONFIGURATION).zip
+  draft: true
   prerelease: false
+  force_update: false
   on:
     branch: master
-    configuration: Release
-    appveyor_repo_tag: true
